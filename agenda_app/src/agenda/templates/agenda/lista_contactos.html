@@ -1,0 +1,20 @@
+<!-- agenda/templates/agenda/lista_contactos.html -->
+{% extends 'base.html' %}
+
+{% block title %}Lista de Contactos{% endblock %}
+
+{% block content %}
+    <h2>Lista de Contactos</h2>
+    <a href="{% url 'agregar_contacto' %}">Agregar Contacto</a>
+    <ul>
+        {% for contacto in contactos %}
+            <li>
+                {{ contacto.nombre }} - {{ contacto.telefono }} - {{ contacto.email }}
+                <a href="{% url 'editar_contacto' contacto.pk %}">Editar</a>
+                <a href="{% url 'eliminar_contacto' contacto.pk %}">Eliminar</a>
+            </li>
+        {% empty %}
+            <p>No hay contactos disponibles.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

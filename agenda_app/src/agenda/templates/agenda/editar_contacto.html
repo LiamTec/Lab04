@@ -1,0 +1,17 @@
+<!-- agenda/templates/agenda/editar_contacto.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Contacto</title>
+</head>
+<body>
+    <h1>Editar Contacto</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="{% url 'lista_contactos' %}">Volver a la lista</a>
+</body>
+</html>
