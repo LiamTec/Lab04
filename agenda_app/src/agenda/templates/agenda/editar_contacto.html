@@ -1,17 +1,78 @@
 <!-- agenda/templates/agenda/editar_contacto.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Editar Contacto</title>
-</head>
-<body>
-    <h1>Editar Contacto</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Actualizar</button>
-    </form>
-    <a href="{% url 'lista_contactos' %}">Volver a la lista</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Editar Contacto{% endblock %}
+
+{% block content %}
+    <div class="edit-contact-container">
+        <h2>Editar Contacto</h2>
+        
+        <form method="post" class="edit-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div class="buttons">
+                <button type="submit" class="btn-update">Actualizar</button>
+                <a href="{% url 'lista_contactos' %}" class="btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        .edit-contact-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-update, .btn-cancel {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-update {
+            background-color: #4CAF50;
+            border: none;
+        }
+
+        .btn-update:hover {
+            background-color: #45a049;
+        }
+
+        .btn-cancel {
+            background-color: #f44336;
+        }
+
+        .btn-cancel:hover {
+            background-color: #e53935;
+        }
+    </style>
+{% endblock %}

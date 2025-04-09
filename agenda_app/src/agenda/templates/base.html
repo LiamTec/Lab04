@@ -1,48 +1,134 @@
 <!-- agenda/templates/base.html -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Agenda de Contactos{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 10px 0;
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
+
+        /* Estilos globales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
             color: #333;
+            line-height: 1.6;
         }
-        footer {
-            background-color: #4CAF50;
+
+        /* Encabezado */
+        header {
+            background-color: #2D3E50;
             color: white;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
-            position: fixed;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #2D3E50;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2D3E50;
+            color: white;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para el contenedor principal */
+        .content {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #2D3E50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
         }
-        .content {
-            padding: 20px;
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Estilo para los bloques de contenido */
+        .content h2 {
+            font-size: 2rem;
+            color: #2D3E50;
+            margin-bottom: 20px;
+        }
+
+        /* Enlaces dentro del contenido */
+        .content a {
+            color: #2D3E50;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .content a:hover {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 15px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -64,4 +150,5 @@
     </footer>
 
 </body>
+
 </html>
