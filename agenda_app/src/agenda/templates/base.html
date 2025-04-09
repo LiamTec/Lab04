@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda de Contactos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        nav a {
+            margin-right: 10px;
+        }
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'lista_contactos' %}">Inicio</a>
+        <a href="{% url 'agregar_contacto' %}">Agregar Contacto</a>
+    </nav>
+    <hr>
+    {% block contenido %}{% endblock %}
+</body>
+</html>
